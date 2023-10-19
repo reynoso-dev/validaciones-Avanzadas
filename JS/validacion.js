@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (password2.value.trim() !== password1.value.trim()) {
       mostrarError(password2, 'Las contraseñas no coinciden')
+    } else if (password1.value.trim() === '') {
+      mostrarError(password2, 'Debe introducir una contraseña en el primer campo')
     } else {
       mostrarExito(password2)
     }
