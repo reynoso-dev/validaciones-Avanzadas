@@ -18,14 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const nombre = document.getElementById('nombre');
+    const apellido = document.getElementById('apellido');
     let check = 0;
 
-    
+
     if (nombre.value.trim() === '') {
       mostrarError(nombre, 'Este campo no puede estar vacio');
     } else {
       mostrarExito(nombre)
       check = 1;
+    }
+
+    if (apellido.value.trim() === '') {
+      mostrarError(apellido, 'Este campo no puede estar vacio');
+      check = check-1;
+    } else {
+      mostrarExito(apellido);
     }
 
 
