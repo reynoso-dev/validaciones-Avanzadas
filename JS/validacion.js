@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const nombre = document.getElementById('nombre');
     const apellido = document.getElementById('apellido');
+    const email = document.getElementById('email');
+    const password1 = document.getElementById('password1');
+    const password2 = document.getElementById('password2');
     let check = 0;
 
 
@@ -36,6 +39,26 @@ document.addEventListener('DOMContentLoaded', function () {
       mostrarExito(apellido);
     }
 
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    if (!emailRegex.test(email.value)) {
+      mostrarError(email, 'Ingresa un email válido');
+      check = check-1;
+    } else {
+      mostrarExito(email);
+    }
+
+    if (password1.value.trim().length < 6) {
+      mostrarError(password1, 'La contaseña debe contener mas de 6 caracteres');
+    } else {
+      mostrarExito(password1)
+    }
+
+    if (password2.value.trim() !== password1.value.trim()) {
+      mostrarError(password2, 'Las contraseñas no coinciden')
+    } else {
+      mostrarExito(password2)
+    }
 
 
     if (!valid) {
