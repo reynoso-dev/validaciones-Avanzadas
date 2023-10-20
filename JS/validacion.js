@@ -66,10 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
            // Validar el checkbox de términos y condiciones
         if (!terminosCheckbox.checked) {
             // El checkbox no está marcado
-            terminosCheckbox.classList.add("is-invalid");
+            mostrarError(terminosCheckbox, 'Debes aceptar los términos y condiciones.')
         } else {
-            terminosCheckbox.classList.remove("is-invalid");
-            terminosCheckbox.classList.add("is-valid");
+            mostrarExito(terminosCheckbox)
         }
 
         if (!isValid) {
