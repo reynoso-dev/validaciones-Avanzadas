@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const password1 = document.getElementById('password1');
     const password2 = document.getElementById('password2');
     const terminosCheckbox = document.getElementById("terminos");
+    const fuera = document.getElementById("fuera");
     let check = 0;
 
 
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (apellido.value.trim() === '') {
       mostrarError(apellido, 'Este campo no puede estar vacio');
-      check = check - 1;
+      check -= 1;
     } else {
       mostrarExito(apellido);
     }
@@ -44,21 +45,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!emailRegex.test(email.value)) {
       mostrarError(email, 'Ingresa un email válido');
-      check = check - 1;
+      check -= 1;
     } else {
       mostrarExito(email);
     }
 
     if (password1.value.trim().length < 6) {
       mostrarError(password1, 'La contaseña debe contener mas de 6 caracteres');
+      check -= 1;
     } else {
       mostrarExito(password1)
     }
 
     if (password2.value.trim() !== password1.value.trim()) {
       mostrarError(password2, 'Las contraseñas no coinciden')
+      check -= 1;
     } else if (password1.value.trim() === '') {
       mostrarError(password2, 'Debe introducir una contraseña en el primer campo')
+      check -= 1;
     } else {
       mostrarExito(password2)
     }
@@ -66,9 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Validar el checkbox de términos y condiciones
     if (!terminosCheckbox.checked) {
       // El checkbox no está marcado
-      mostrarError(terminosCheckbox, 'Debes aceptar los términos y condiciones.')
+      mostrarError(terminosCheckbox, 'Acepto los términos y condiciones del servicio.')
+      mostrarError(fuera, 'Debes aceptar los términos y condiciones.')
+      check -= 1;
     } else {
       mostrarExito(terminosCheckbox)
+      terminosCheckbox.nextElementSibling.innerHTML = 'Acepto los términos y condiciones del servicio.';
+      fuera.nextElementSibling.innerHTML = '';
     }
 
 
