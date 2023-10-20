@@ -19,48 +19,62 @@
           <h1 class="mb-3">Registro</h1>
           <hr class="my-4">
           <div class="row g-3">
-            <div class="col-sm-6">
+           <div class="col-sm-6">
               <label for="nombre" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="nombre">
-              <span class="invalid-feedback"></span>
+              <div class="input-group">
+                    <i class="fas fa-check-circle text-success d-none" id="name-icon"></i>
+                </div>
+              <div class="invalid-feedback">Debes llenar el campo con tu nombre.</div>
             </div>
 
             <div class="col-sm-6">
               <label for="apellido" class="form-label">Apellido</label>
               <input type="text" class="form-control" id="apellido">
-              <span class="invalid-feedback"></span>
+              <div class="input-group">
+                    <i class="fas fa-check-circle text-success d-none" id="surname-icon"></i>
+                </div>
+              <div class="invalid-feedback">Debes llenar el campo con tu apellido.</div>
             </div>
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email">
-              <span class="invalid-feedback"></span>
+                <input type="email" class="form-control" id="email">
+                <div class="input-group">
+                      <i class="fas fa-check-circle text-success d-none" id="email-icon"></i>
+                  </div>
+                <div class="invalid-feedback">Debes ingresar un correo electrónico válido.</div>
             </div>
+
 
             <div class="col-sm-6">
               <label for="password1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password1">
-              <span class="invalid-feedback"></span>
+                <input type="password" class="form-control" id="password1">
+                <div class="input-group">
+                      <i class="fas fa-check-circle text-success d-none" id="password1-icon"></i>
+                  </div>
+                <div class="invalid-feedback">Debes ingresar tu contraseña (min. 6 caracteres).</div>
             </div>
 
             <div class="col-sm-6">
               <label for="password2" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control" id="password2">
-              <span class="invalid-feedback"></span>
+                <input type="password" class="form-control" id="password2">
+                <div class="input-group">
+                      <i class="fas fa-check-circle text-success d-none" id="password2-icon"></i>
+                  </div>
+                  <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
             </div>
 
-            <div class="d-flex align-items-center">
-              <div class="col-sm-3 text-center">
-                <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal"
-                  data-bs-target="#modalTerminos">Términos del servicio</button>
+            
+            <div class="col-12"> 
+                <button type="button" class="btn btn-link ps-0" data-bs-toggle="modal"data-bs-target="#modalTerminos">Términos del servicio</button>
+                <div class="form-group"> 
+                <i class="fas fa-check-circle text-success" id="checkbox-icon"></i>
               </div>
-              <div class="col-sm-6">
-                <span id="fuera"></span>
-                <span class="invalid-feedback"></span>
-              </div>
+                <div class="invalid-feedback" id="checkbox-error">Debes aceptar los términos y condiciones.</div>
             </div>
 
-            <button class="btn btn-primary" type="submit">Registrarme</button>
+            <button class="btn btn-outline-secondary" type="submit">Registrarme</button>
 
 
           </div>
