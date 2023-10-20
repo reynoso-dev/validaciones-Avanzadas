@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = document.getElementById('email');
     const password1 = document.getElementById('password1');
     const password2 = document.getElementById('password2');
+    const terminosCheckbox = document.getElementById("terminos");
     let check = 0;
 
 
@@ -61,7 +62,20 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       mostrarExito(password2)
     }
+    
+           // Validar el checkbox de términos y condiciones
+        if (!terminosCheckbox.checked) {
+            // El checkbox no está marcado
+            terminosCheckbox.classList.add("is-invalid");
+        } else {
+            terminosCheckbox.classList.remove("is-invalid");
+            terminosCheckbox.classList.add("is-valid");
+        }
 
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
 
     if (!valid) {
       event.preventDefault();
