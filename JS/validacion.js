@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (apellido.value.trim() === '') {
       mostrarError(apellido, 'Este campo no puede estar vacio');
-      check = check-1;
+      check = check - 1;
     } else {
       mostrarExito(apellido);
     }
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!emailRegex.test(email.value)) {
       mostrarError(email, 'Ingresa un email válido');
-      check = check-1;
+      check = check - 1;
     } else {
       mostrarExito(email);
     }
@@ -62,20 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       mostrarExito(password2)
     }
+
+    // Validar el checkbox de términos y condiciones
+    if (!terminosCheckbox.checked) {
+      // El checkbox no está marcado
+      mostrarError(terminosCheckbox, 'Debes aceptar los términos y condiciones.')
+    } else {
+      mostrarExito(terminosCheckbox)
+    }
+
+
     
-           // Validar el checkbox de términos y condiciones
-        if (!terminosCheckbox.checked) {
-            // El checkbox no está marcado
-            mostrarError(terminosCheckbox, 'Debes aceptar los términos y condiciones.')
-        } else {
-            mostrarExito(terminosCheckbox)
-        }
-
-        if (!isValid) {
-            event.preventDefault();
-        }
-    });
-
     if (!valid) {
       event.preventDefault();
     }
